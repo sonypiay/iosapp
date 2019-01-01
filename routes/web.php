@@ -11,7 +11,4 @@
 |
 */
 
-Route::get('/', function() {
-  
-});
-//Route::get('/', 'Pages\BarangController@index');
+Route::get('/', 'Pages\BarangController@index');

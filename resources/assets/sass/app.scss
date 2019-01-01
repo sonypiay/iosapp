@@ -5,10 +5,48 @@
 // Variables
 @import 'variables';
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+html, body {
+  background: $body-bg;
+}
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+.header {
+  background: #ffffff;
+  .logo {
+    width: 70px;
+  }
+}
+
+.homepagecontainer {
+  background: none;
+  .homepage-heading {
+    color: #666666;
+    font-size: 28px;
+    font-family: $font-primary;
+  }
+  .btn_viewitem {
+    font-family: $font-primary;
+    color: #3b99fb;
+    background: #ffffff;
+    border: 0;
+    border-radius: 3px;
+    text-transform: capitalize;
+  }
+}
+.content-heading {
+  color: #666666;
+  font-size: 28px;
+  font-family: $font-primary;
+}
+.card-listitems {
+  box-shadow: none;
+  font-family: $font-primary;
+  .card-listitem-title {
+    color: #666666;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .card-listitem-value {
+    color: #666666;
+    font-size: 13px;
+  }
 }
