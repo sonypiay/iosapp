@@ -16,3 +16,8 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/listitems', 'Api\BarangApiController@listitems');
+Route::post('/add/items', 'Api\BarangApiController@store');
+Route::put('/edit/items/{id}', 'Api\BarangApiController@update');
+Route::delete('/delete/items/{id}', 'Api\BarangApiController@destroy');
