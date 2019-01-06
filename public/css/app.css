@@ -28,6 +28,7 @@ body {
   border: 0;
   border-radius: 3px;
   text-transform: capitalize;
+  font-size: 13px;
 }
 
 .content-heading {
@@ -51,5 +52,40 @@ body {
 .card-listitems .card-listitem-value {
   color: #666666;
   font-size: 13px;
+}
+
+.input-form {
+  border-radius: 3px;
+  border: 0;
+}
+
+.button-form {
+  font-family: "Lucida Sans", sans-serif;
+  color: #3b99fb;
+  background: #ffffff;
+  border: 0;
+  border-radius: 3px;
+  text-transform: capitalize;
+  font-size: 16px;
+}
+
+.button-form:hover,
+.button-form:focus {
+  color: #3b99fb;
+  background: #ffffff;
+}
+
+.button-action {
+  display: block;
+  border: 0;
+  background: #f9f9f9;
+  color: #3b99fb;
+  text-transform: capitalize;
+}
+
+.button-action:hover,
+.button-action:focus {
+  color: #3b99fb;
+  background: #ffffff;
 }
 

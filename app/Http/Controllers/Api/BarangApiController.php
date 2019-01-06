@@ -18,6 +18,16 @@ class BarangApiController extends Controller
     return response()->json( $data, $data['status'] );
   }
 
+  public function getitems( Request $request, Barang $barang, $id )
+  {
+    $listitem = $barang->where('id_barang', $id)->first();
+    $data = [
+      'status' => 200,
+      'results' => $listitem
+    ];
+    return response()->json( $data, $data['status'] );
+  }
+
   public function store( Request $request, Barang $barang )
   {
     $nama = $request->nama_barang;
@@ -32,7 +42,7 @@ class BarangApiController extends Controller
 
     $res = [
       'status' => 200,
-      'statusText' => 'Barang baru berhasil ditambah.'
+      'statusText' => 'Barang berhasil ditambah.'
     ];
 
     return response()->json( $res, $res['status'] );
