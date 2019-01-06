@@ -24,6 +24,12 @@ window.Vue = require('vue');
    },
    {
      path: '/listitems', component: require('./components/ListBarang.vue')
+   },
+   {
+     path: '/add', component: require('./components/AddItems.vue')
+   },
+   {
+     path: '/edit/:id', component: require('./components/EditItems.vue')
    }
  ];
 

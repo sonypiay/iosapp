@@ -18,6 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/listitems', 'Api\BarangApiController@listitems');
+Route::get('/getitems/{id}', 'Api\BarangApiController@getitems');
 Route::post('/add/items', 'Api\BarangApiController@store');
 Route::put('/edit/items/{id}', 'Api\BarangApiController@update');
 Route::delete('/delete/items/{id}', 'Api\BarangApiController@destroy');

@@ -14109,6 +14109,13 @@ var routes = [{
   path: '/', component: __webpack_require__(42)
 }, {
   path: '/listitems', component: __webpack_require__(46)
+<<<<<<< HEAD
+=======
+}, {
+  path: '/add', component: __webpack_require__(54)
+}, {
+  path: '/edit/:id', component: __webpack_require__(57)
+>>>>>>> dev
 }];
 
 var router = new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({
@@ -50526,6 +50533,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -50545,10 +50563,22 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("header", { staticClass: "uk-navbar header" }, [
+<<<<<<< HEAD
       _c("div", { staticClass: "uk-navbar-center" }, [
         _c(
           "a",
           { staticClass: "uk-navbar-item uk-logo", attrs: { href: "#" } },
+=======
+      _vm._m(0),
+      _vm._v(" "),
+      _c("div", { staticClass: "uk-navbar-center" }, [
+        _c(
+          "a",
+          {
+            staticClass: "uk-navbar-item uk-logo",
+            attrs: { href: _vm.$root.url + "/" }
+          },
+>>>>>>> dev
           [
             _c("img", {
               staticClass: "logo",
@@ -50563,7 +50593,26 @@ var render = function() {
     ])
   ])
 }
+<<<<<<< HEAD
 var staticRenderFns = []
+=======
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "uk-navbar-left" }, [
+      _c("a", {
+        staticClass: "uk-navbar-item",
+        attrs: {
+          onclick: "self.history.back()",
+          "uk-icon": "ratio: 1.5; icon: arrow-left"
+        }
+      })
+    ])
+  }
+]
+>>>>>>> dev
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -50589,35 +50638,68 @@ var render = function() {
         attrs: { "uk-height-viewport": "" }
       },
       [
-        _c("navbaritem"),
+        _c("header", { staticClass: "uk-navbar header" }, [
+          _c("div", { staticClass: "uk-navbar-center" }, [
+            _c(
+              "a",
+              {
+                staticClass: "uk-navbar-item uk-logo",
+                attrs: { href: _vm.$root.url + "/" }
+              },
+              [
+                _c("img", {
+                  staticClass: "logo",
+                  attrs: {
+                    src: _vm.$root.url + "/images/logo/logo_umb.jpg",
+                    alt: ""
+                  }
+                })
+              ]
+            )
+          ])
+        ]),
         _vm._v(" "),
-        _c("div", { staticClass: "uk-position-center" }, [
-          _c(
-            "div",
-            {
-              staticClass:
-                "uk-tile uk-tile-default uk-padding-large homepagecontainer"
-            },
-            [
-              _c("div", { staticClass: "homepage-heading" }, [
-                _vm._v("Kooperasi UMB")
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "uk-margin-top" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "uk-button uk-button-default btn_viewitem",
-                    attrs: { href: _vm.$root.url + "/#/listitems" }
-                  },
-                  [_vm._v("Lihat Data Barang")]
-                )
-              ])
-            ]
-          )
+        _c("div", { staticClass: "uk-width-1-1" }, [
+          _c("div", { staticClass: "uk-position-center" }, [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "uk-tile uk-tile-default uk-padding-large homepagecontainer"
+              },
+              [
+                _c("div", { staticClass: "homepage-heading" }, [
+                  _vm._v("Kooperasi UMB")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "uk-margin" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass:
+                        "uk-button uk-button-default uk-display-block btn_viewitem",
+                      attrs: { href: _vm.$root.url + "/#/listitems" }
+                    },
+                    [_vm._v("Lihat Data Barang")]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "uk-margin" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass:
+                        "uk-button uk-button-default uk-display-block btn_viewitem",
+                      attrs: { href: _vm.$root.url + "/#/add" }
+                    },
+                    [_vm._v("Tambah Data Barang")]
+                  )
+                ])
+              ]
+            )
+          ])
         ])
-      ],
-      1
+      ]
     )
   ])
 }
@@ -50705,6 +50787,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -50731,6 +50827,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       }).catch(function (err) {
         console.log(err.response.statusText);
       });
+    },
+    deleteItems: function deleteItems(id) {
+      var _this2 = this;
+
+      axios({
+        method: 'delete',
+        url: this.$root.url + '/api/delete/items/' + id
+      }).then(function (res) {
+        _this2.listItems();
+      }).catch(function (err) {
+        console.log(err.response.statusText);
+      });
     }
   },
   mounted: function mounted() {
@@ -50754,7 +50862,7 @@ var render = function() {
       _c("div", { staticClass: "uk-container" }, [
         _c(
           "h3",
-          { staticClass: "uk-text-center uk-margin-large-top content-heading" },
+          { staticClass: "uk-text-left uk-margin-large-top content-heading" },
           [_vm._v("Data Barang")]
         ),
         _vm._v(" "),
@@ -50768,16 +50876,66 @@ var render = function() {
                   "div",
                   {
                     staticClass:
-                      "uk-card uk-card-body uk-card-default uk-card-small card-listitems"
+                      "uk-card uk-card-default uk-card-small card-listitems"
                   },
                   [
-                    _c("div", { staticClass: "card-listitem-title" }, [
-                      _vm._v(_vm._s(items.nama_barang))
+                    _c("div", { staticClass: "uk-card-body" }, [
+                      _c("div", { staticClass: "card-listitem-title" }, [
+                        _vm._v(_vm._s(items.nama_barang))
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "card-listitem-value" }, [
+                        _vm._v("Rp. " + _vm._s(items.harga))
+                      ])
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "card-listitem-value" }, [
-                      _vm._v("Rp. " + _vm._s(items.harga))
-                    ])
+                    _c(
+                      "div",
+                      {
+                        staticClass: "uk-grid-collapse",
+                        attrs: { "uk-grid": "" }
+                      },
+                      [
+                        _c("div", { staticClass: "uk-width-1-2" }, [
+                          _c(
+                            "a",
+                            {
+                              staticClass:
+                                "uk-button uk-button-default button-action",
+                              attrs: {
+                                href:
+                                  _vm.$root.url + "/#/edit/" + items.id_barang
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "\n                  Ubah\n                "
+                              )
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "uk-width-1-2" }, [
+                          _c(
+                            "a",
+                            {
+                              staticClass:
+                                "uk-button uk-button-default button-action",
+                              on: {
+                                click: function($event) {
+                                  _vm.deleteItems(items.id_barang)
+                                }
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "\n                  Hapus\n                "
+                              )
+                            ]
+                          )
+                        ])
+                      ]
+                    )
                   ]
                 )
               ])
@@ -50803,8 +50961,678 @@ if (false) {
 /***/ }),
 /* 49 */
 /***/ (function(module, exports) {
+<<<<<<< HEAD
 
 // removed by extract-text-webpack-plugin
+=======
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 50 */,
+/* 51 */,
+/* 52 */,
+/* 53 */,
+/* 54 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(3)
+/* script */
+var __vue_script__ = __webpack_require__(55)
+/* template */
+var __vue_template__ = __webpack_require__(56)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/AddItems.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-62b84d56", Component.options)
+  } else {
+    hotAPI.reload("data-v-62b84d56", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 55 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Navbar_vue__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Navbar_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Navbar_vue__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    navbaritem: __WEBPACK_IMPORTED_MODULE_0__Navbar_vue___default.a
+  },
+  data: function data() {
+    return {
+      forms: {
+        namabarang: '',
+        merkbarang: '',
+        hargabarang: '',
+        error: false
+      },
+      successMessage: '',
+      errorMessage: ''
+    };
+  },
+
+  methods: {
+    addItems: function addItems() {
+      var _this = this;
+
+      if (this.forms.namabarang === '') {
+        this.forms.error = true;
+      }
+      if (this.forms.merkbarang === '') {
+        this.forms.error = true;
+      }
+      if (this.forms.hargabarang === '') {
+        this.forms.error = true;
+      }
+
+      if (this.forms.error === true) {
+        this.forms.error = false;
+        return false;
+      }
+
+      axios({
+        method: 'post',
+        url: this.$root.url + '/api/add/items',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        params: {
+          nama_barang: this.forms.namabarang,
+          merk_barang: this.forms.merkbarang,
+          harga_barang: this.forms.hargabarang
+        }
+      }).then(function (res) {
+        _this.forms = {
+          namabarang: '',
+          merkbarang: '',
+          hargabarang: '',
+          error: false
+        };
+        _this.successMessage = res.data.statusText;
+      }).catch(function (err) {
+        _this.errorMessage = err.response.statusText;
+      });
+    }
+  }
+});
+
+/***/ }),
+/* 56 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c("navbaritem"),
+      _vm._v(" "),
+      _c("div", { staticClass: "uk-container" }, [
+        _c(
+          "h3",
+          { staticClass: "uk-text-left uk-margin-large-top content-heading" },
+          [_vm._v("Tambah Barang")]
+        ),
+        _vm._v(" "),
+        _vm.successMessage
+          ? _c(
+              "div",
+              { staticClass: "uk-alert-success", attrs: { "uk-alert": "" } },
+              [_vm._v(_vm._s(_vm.successMessage))]
+            )
+          : _vm._e(),
+        _vm._v(" "),
+        _vm.errorMessage
+          ? _c(
+              "div",
+              { staticClass: "uk-alert-danger", attrs: { "uk-alert": "" } },
+              [_vm._v(_vm._s(_vm.errorMessage))]
+            )
+          : _vm._e(),
+        _vm._v(" "),
+        _c(
+          "form",
+          {
+            staticClass: "uk-form-stacked",
+            on: {
+              submit: function($event) {
+                $event.preventDefault()
+                return _vm.addItems($event)
+              }
+            }
+          },
+          [
+            _c("div", { staticClass: "uk-margin" }, [
+              _c("label", { staticClass: "uk-form-label" }, [
+                _vm._v("Nama Barang")
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "uk-form-controls" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.forms.namabarang,
+                      expression: "forms.namabarang"
+                    }
+                  ],
+                  staticClass: "uk-input input-form",
+                  attrs: { type: "text" },
+                  domProps: { value: _vm.forms.namabarang },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.forms, "namabarang", $event.target.value)
+                    }
+                  }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "uk-margin" }, [
+              _c("label", { staticClass: "uk-form-label" }, [
+                _vm._v("Merk Barang")
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "uk-form-controls" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.forms.merkbarang,
+                      expression: "forms.merkbarang"
+                    }
+                  ],
+                  staticClass: "uk-input input-form",
+                  attrs: { type: "text" },
+                  domProps: { value: _vm.forms.merkbarang },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.forms, "merkbarang", $event.target.value)
+                    }
+                  }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "uk-margin" }, [
+              _c("label", { staticClass: "uk-form-label" }, [
+                _vm._v("Harga Barang")
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "uk-form-controls" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.forms.hargabarang,
+                      expression: "forms.hargabarang"
+                    }
+                  ],
+                  staticClass: "uk-input input-form",
+                  attrs: { type: "text" },
+                  domProps: { value: _vm.forms.hargabarang },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.forms, "hargabarang", $event.target.value)
+                    }
+                  }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _vm._m(0)
+          ]
+        )
+      ])
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "uk-margin" }, [
+      _c(
+        "button",
+        { staticClass: "uk-width-1-1 uk-button uk-button-default button-form" },
+        [_vm._v("Tambah")]
+      )
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-62b84d56", module.exports)
+  }
+}
+
+/***/ }),
+/* 57 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(3)
+/* script */
+var __vue_script__ = __webpack_require__(58)
+/* template */
+var __vue_template__ = __webpack_require__(59)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/EditItems.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-201aa4af", Component.options)
+  } else {
+    hotAPI.reload("data-v-201aa4af", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 58 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Navbar_vue__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Navbar_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Navbar_vue__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    navbaritem: __WEBPACK_IMPORTED_MODULE_0__Navbar_vue___default.a
+  },
+  data: function data() {
+    return {
+      forms: {
+        namabarang: '',
+        merkbarang: '',
+        hargabarang: '',
+        error: false
+      },
+      successMessage: '',
+      errorMessage: ''
+    };
+  },
+
+  methods: {
+    getItems: function getItems() {
+      var _this = this;
+
+      axios({
+        method: 'get',
+        url: this.$root.url + '/api/getitems/' + this.$route.params.id
+      }).then(function (res) {
+        var result = res.data;
+        _this.forms.namabarang = result.results.nama_barang;
+        _this.forms.merkbarang = result.results.merk_barang;
+        _this.forms.hargabarang = result.results.harga;
+        console.log(result);
+      }).catch(function (err) {
+        console.log(err.response.statusText);
+      });
+    },
+    editItems: function editItems() {
+      var _this2 = this;
+
+      if (this.forms.namabarang === '') {
+        this.forms.error = true;
+      }
+      if (this.forms.merkbarang === '') {
+        this.forms.error = true;
+      }
+      if (this.forms.hargabarang === '') {
+        this.forms.error = true;
+      }
+
+      if (this.forms.error === true) {
+        this.forms.error = false;
+        return false;
+      }
+
+      axios({
+        method: 'put',
+        url: this.$root.url + '/api/edit/items/' + this.$route.params.id,
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        params: {
+          nama_barang: this.forms.namabarang,
+          merk_barang: this.forms.merkbarang,
+          harga_barang: this.forms.hargabarang
+        }
+      }).then(function (res) {
+        _this2.successMessage = res.data.statusText;
+        var redirect = _this2.$root.url + '/#/listitems';
+        setTimeout(function () {
+          document.location = redirect;
+        }, 2000);
+      }).catch(function (err) {
+        _this2.errorMessage = err.response.statusText;
+      });
+    }
+  },
+  mounted: function mounted() {
+    this.getItems();
+  }
+});
+
+/***/ }),
+/* 59 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c("navbaritem"),
+      _vm._v(" "),
+      _c("div", { staticClass: "uk-container" }, [
+        _c(
+          "h3",
+          { staticClass: "uk-text-left uk-margin-large-top content-heading" },
+          [_vm._v("Edit Barang")]
+        ),
+        _vm._v(" "),
+        _vm.successMessage
+          ? _c(
+              "div",
+              { staticClass: "uk-alert-success", attrs: { "uk-alert": "" } },
+              [_vm._v(_vm._s(_vm.successMessage))]
+            )
+          : _vm._e(),
+        _vm._v(" "),
+        _vm.errorMessage
+          ? _c(
+              "div",
+              { staticClass: "uk-alert-danger", attrs: { "uk-alert": "" } },
+              [_vm._v(_vm._s(_vm.errorMessage))]
+            )
+          : _vm._e(),
+        _vm._v(" "),
+        _c(
+          "form",
+          {
+            staticClass: "uk-form-stacked",
+            on: {
+              submit: function($event) {
+                $event.preventDefault()
+                return _vm.editItems($event)
+              }
+            }
+          },
+          [
+            _c("div", { staticClass: "uk-margin" }, [
+              _c("label", { staticClass: "uk-form-label" }, [
+                _vm._v("Nama Barang")
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "uk-form-controls" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.forms.namabarang,
+                      expression: "forms.namabarang"
+                    }
+                  ],
+                  staticClass: "uk-input input-form",
+                  attrs: { type: "text" },
+                  domProps: { value: _vm.forms.namabarang },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.forms, "namabarang", $event.target.value)
+                    }
+                  }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "uk-margin" }, [
+              _c("label", { staticClass: "uk-form-label" }, [
+                _vm._v("Merk Barang")
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "uk-form-controls" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.forms.merkbarang,
+                      expression: "forms.merkbarang"
+                    }
+                  ],
+                  staticClass: "uk-input input-form",
+                  attrs: { type: "text" },
+                  domProps: { value: _vm.forms.merkbarang },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.forms, "merkbarang", $event.target.value)
+                    }
+                  }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "uk-margin" }, [
+              _c("label", { staticClass: "uk-form-label" }, [
+                _vm._v("Harga Barang")
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "uk-form-controls" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.forms.hargabarang,
+                      expression: "forms.hargabarang"
+                    }
+                  ],
+                  staticClass: "uk-input input-form",
+                  attrs: { type: "text" },
+                  domProps: { value: _vm.forms.hargabarang },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.forms, "hargabarang", $event.target.value)
+                    }
+                  }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _vm._m(0)
+          ]
+        )
+      ])
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "uk-margin" }, [
+      _c(
+        "button",
+        { staticClass: "uk-width-1-1 uk-button uk-button-default button-form" },
+        [_vm._v("Ubah Data")]
+      )
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-201aa4af", module.exports)
+  }
+}
+>>>>>>> dev
 
 /***/ })
 /******/ ]);

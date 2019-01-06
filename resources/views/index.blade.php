@@ -16,7 +16,7 @@
   </script>
 </head>
 <body>
-<div id="app">
+<div class="uk-width-1-4@xl uk-width-1-3@l uk-width-1-3@m uk-width-1-1@s uk-align-center" id="app">
   <router-view></router-view>
 </div>
 <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
