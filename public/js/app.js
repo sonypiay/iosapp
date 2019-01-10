@@ -50558,44 +50558,25 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("header", { staticClass: "uk-navbar header" }, [
-      _vm._m(0),
-      _vm._v(" "),
-      _c("div", { staticClass: "uk-navbar-center" }, [
-        _c(
-          "a",
-          {
-            staticClass: "uk-navbar-item uk-logo",
-            attrs: { href: _vm.$root.url + "/" }
-          },
-          [
-            _c("img", {
-              staticClass: "logo",
-              attrs: {
-                src: _vm.$root.url + "/images/logo/logo_umb.jpg",
-                alt: ""
-              }
-            })
-          ]
-        )
-      ])
-    ])
-  ])
+  return _vm._m(0)
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "uk-navbar-left" }, [
-      _c("a", {
-        staticClass: "uk-navbar-item",
-        attrs: {
-          onclick: "self.history.back()",
-          "uk-icon": "ratio: 1.5; icon: arrow-left"
-        }
-      })
+    return _c("div", [
+      _c("header", { staticClass: "uk-navbar header" }, [
+        _c("div", { staticClass: "uk-navbar-left" }, [
+          _c("a", {
+            staticClass: "uk-navbar-item",
+            attrs: {
+              onclick: "self.history.back()",
+              "uk-icon": "ratio: 1.5; icon: arrow-left"
+            }
+          })
+        ])
+      ])
     ])
   }
 ]
@@ -50786,7 +50767,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -50840,99 +50820,88 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("navbaritem"),
+  return _c("div", [
+    _c("div", { staticClass: "uk-container" }, [
+      _c(
+        "h3",
+        { staticClass: "uk-text-center uk-margin-top content-heading" },
+        [_vm._v("Data Barang")]
+      ),
       _vm._v(" "),
-      _c("div", { staticClass: "uk-container" }, [
+      _c("div", { staticClass: "uk-margin-top" }, [
         _c(
-          "h3",
-          { staticClass: "uk-text-left uk-margin-large-top content-heading" },
-          [_vm._v("Data Barang")]
-        ),
-        _vm._v(" "),
-        _c("div", { staticClass: "uk-margin-top" }, [
-          _c(
-            "div",
-            { staticClass: "uk-grid-small", attrs: { "uk-grid": "" } },
-            _vm._l(_vm.listitems, function(items) {
-              return _c("div", { staticClass: "uk-width-1-1" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass:
-                      "uk-card uk-card-default uk-card-small card-listitems"
-                  },
-                  [
-                    _c("div", { staticClass: "uk-card-body" }, [
-                      _c("div", { staticClass: "card-listitem-title" }, [
-                        _vm._v(_vm._s(items.nama_barang))
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "card-listitem-value" }, [
-                        _vm._v("Rp. " + _vm._s(items.harga))
-                      ])
+          "div",
+          { staticClass: "uk-grid-small", attrs: { "uk-grid": "" } },
+          _vm._l(_vm.listitems, function(items) {
+            return _c("div", { staticClass: "uk-width-1-1" }, [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "uk-card uk-card-default uk-card-small card-listitems"
+                },
+                [
+                  _c("div", { staticClass: "uk-card-body" }, [
+                    _c("div", { staticClass: "card-listitem-title" }, [
+                      _vm._v(_vm._s(items.nama_barang))
                     ]),
                     _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass: "uk-grid-collapse",
-                        attrs: { "uk-grid": "" }
-                      },
-                      [
-                        _c("div", { staticClass: "uk-width-1-2" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass:
-                                "uk-button uk-button-default button-action",
-                              attrs: {
-                                href:
-                                  _vm.$root.url + "/#/edit/" + items.id_barang
+                    _c("div", { staticClass: "card-listitem-value" }, [
+                      _vm._v("Rp. " + _vm._s(items.harga))
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "uk-grid-collapse",
+                      attrs: { "uk-grid": "" }
+                    },
+                    [
+                      _c("div", { staticClass: "uk-width-1-2" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass:
+                              "uk-button uk-button-default button-action",
+                            attrs: {
+                              href: _vm.$root.url + "/#/edit/" + items.id_barang
+                            }
+                          },
+                          [_vm._v("\n                  Ubah\n                ")]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "uk-width-1-2" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass:
+                              "uk-button uk-button-default button-action",
+                            on: {
+                              click: function($event) {
+                                _vm.deleteItems(items.id_barang)
                               }
-                            },
-                            [
-                              _vm._v(
-                                "\n                  Ubah\n                "
-                              )
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "uk-width-1-2" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass:
-                                "uk-button uk-button-default button-action",
-                              on: {
-                                click: function($event) {
-                                  _vm.deleteItems(items.id_barang)
-                                }
-                              }
-                            },
-                            [
-                              _vm._v(
-                                "\n                  Hapus\n                "
-                              )
-                            ]
-                          )
-                        ])
-                      ]
-                    )
-                  ]
-                )
-              ])
-            }),
-            0
-          )
-        ])
+                            }
+                          },
+                          [
+                            _vm._v(
+                              "\n                  Hapus\n                "
+                            )
+                          ]
+                        )
+                      ])
+                    ]
+                  )
+                ]
+              )
+            ])
+          }),
+          0
+        )
       ])
-    ],
-    1
-  )
+    ])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true

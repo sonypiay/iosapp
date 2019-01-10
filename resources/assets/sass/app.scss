@@ -34,7 +34,7 @@ html, body {
   }
 }
 .content-heading {
-  color: #666666;
+  color: #ffffff;
   font-size: 28px;
   font-family: $font-primary;
 }
@@ -76,7 +76,7 @@ html, body {
   color: #3b99fb;
   text-transform: capitalize;
   &:hover, &:focus {
-    color: #3b99fb;
-    background: #ffffff;
+    color: #ffffff;
+    background: red;
   }
 }

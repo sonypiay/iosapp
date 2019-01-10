@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);html,
 body {
-  background: #f2f2f2;
+  background: red;
 }
 
 .header {
@@ -32,7 +32,7 @@ body {
 }
 
 .content-heading {
-  color: #666666;
+  color: #ffffff;
   font-size: 28px;
   font-family: "Lucida Sans", sans-serif;
 }
@@ -85,7 +85,7 @@ body {
 
 .button-action:hover,
 .button-action:focus {
-  color: #3b99fb;
-  background: #ffffff;
+  color: #ffffff;
+  background: red;
 }
 
