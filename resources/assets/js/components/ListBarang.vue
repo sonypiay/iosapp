@@ -1,8 +1,7 @@
 <template>
   <div>
-    <navbaritem></navbaritem>
     <div class="uk-container">
-      <h3 class="uk-text-left uk-margin-large-top content-heading">Data Barang</h3>
+      <h3 class="uk-text-center uk-margin-top content-heading">Data Barang</h3>
       <div class="uk-margin-top">
         <div class="uk-grid-small" uk-grid>
           <div class="uk-width-1-1" v-for="items in listitems">
